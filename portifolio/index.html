@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Laura Stabile | Portifólio</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <nav class="navegacao">
+      <ul class="menu">
+         <li>
+            <a href="#inicio" class="menu-link">Início</a>
+         </li>
+         <li>
+            <a href="#sobre" class="menu-link">Sobre</a>
+         </li>
+         <li>
+            <a href="#projetos" class="menu-link">Projetos</a>
+         </li>
+         <li>
+            <a href="#contatos" class="menu-link">Contatos</a>
+         </li>
+      </ul>
+   </nav>
+
+   <main id="inicio" class="cabecalho" >
+      <div class="hero-container">
+
+      <div class="lado-esquerdo">
+         <div class="nome-container">
+            <h1 class="nome-text" data-text="Laura Stabile">Laura Stabile</h1>
+         </div>
+         <p class="cabecalho-subtitulo">Estudante de programação</p>
+
+         <p class="cabecalho-subtitulo"> | Python • JavaScript • HTML • CSS | </p>
+         </div>
+         <img src="./img/laura.jpg" class="foto-perfil">
+      </div>
+
+   </main>
+
+   <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre mim</h2>
+      <div class="sobre-caixa">
+         <p class="sobre-paragrafo">
+            Olá! Sou estudante de Análise e Desenvolvimento de Sistemas no IFMS. 
+         </p>
+         <p class="sobre-paragrafo">
+            Tenho conhecimento em Python, HTML, CSS e JavaScript. Atualmente estou me aprofundando em frameworks como FastAPI e React.
+         </p>
+      </div>
+   </section>
+
+   <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+         <div class="projetos-card">
+            <img src="./img/sistemacadastro.png" alt= "Projeto 1" class="projetos-imagem">
+            <h3 class="info-projetos">Sistema de Cadastro</h3>
+            <p class="paragrafo-projetos">Sistema de cadastro básico com streamlit.</p>
+         </div>
+         <div class="projetos-card">
+            <img src="./img/trespontos.webp" class="projetos-imagem">
+            <h3 class="info-projetos">Em breve...</h3>
+            <p class="paragrafo-projetos">Projetos em construção.</p>
+         </div>
+      </div>
+   </section>
+
+   <section id="contatos" class="contatos">
+      <h2 class="contatos-titulo">Entre em Contato</h2>
+      <form class="formulario-contato" id="formulario" onsubmit="enviarwhats(event)">
+         <div class="grupo-form">
+         <input type="text" placeholder="Nome" class="campo-form" id="nome">
+         </div>
+         <div class="grupo-form">
+         <textarea placeholder="Digite sua mensagem" class="campo-form" id="mensagem" rows="5"></textarea>
+         </div>
+
+         <button type="submit" class="botao-form">Enviar Whatsapp</button>
+      </form>
+   </section>
+
+   <script>
+      function enviarwhats(event){
+         event.preventDefault()
+
+
+         const nome= document.getElementById ('nome').value;
+         const mensagem= document.getElementById ('mensagem').value;
+         const telefone= '5518997637293'
+
+         const texto= `Olá! Me chamo ${nome}, ${mensagem}`
+         const msgformatada= encodeURIComponent (texto)
+
+         const url= `https://wa.me/${telefone}?text=${msgformatada}`
+
+         console.log(url)
+
+         window.open(url, '_blank')
+}
+   </script>
+
+   <footer class="rodape">
+   <a href="https://www.linkedin.com/in/laura-st%C3%A1bile-173b1135b/" target="_blank" class="rodape-link">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn" width="28">
+   </a>
+   <a href="https://github.com/laurastabileofc" target="_blank" class="rodape-link">
+      <img src="https://cdn.simpleicons.org/github/8b5cf6" alt="GitHub" width="28">
+   </a>
+   <a href="mailto:laurastabile.ofc@gmail.com" class="rodape-link">
+      <img src="https://cdn.simpleicons.org/gmail/8b5cf6" alt="Email" width="28">
+   </a>
+</footer>
+
+</body>
+</html>
